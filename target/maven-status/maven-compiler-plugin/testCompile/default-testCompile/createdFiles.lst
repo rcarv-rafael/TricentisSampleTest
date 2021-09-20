@@ -1,3 +1,5 @@
-tricentisample\StepDefinitions.class
 StepDefinitions\insuranceFormSteps.class
+Pages\vehicleForm.class
+com\framework\helper\waitHelper.class
+com\framework\helper\commonsHelper.class
 tricentisample\RunCucumberTest.class
