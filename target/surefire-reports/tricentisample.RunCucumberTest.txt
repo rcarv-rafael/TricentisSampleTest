@@ -1,4 +1,31 @@
 -------------------------------------------------------------------------------
 Test set: tricentisample.RunCucumberTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 26.797 sec
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 17.998 sec <<< FAILURE!
+Success send request form.(Vehicle Insurance request form)  Time elapsed: 14.655 sec  <<< ERROR!
+org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=93.0.4577.82)
+Build info: version: '4.0.0-rc-1', revision: 'bc5511cbda'
+System info: host: 'DESKTOP-QDI7E82', ip: '192.168.15.7', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '16.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [7f44f9359072de515b117634ac9039ac, sendKeysToElement {id=975e0496-65a8-444c-bc6d-3ef78d4662dc, value=[Ljava.lang.CharSequence;@ff23ae7}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 93.0.4577.82, chrome: {chromedriverVersion: 93.0.4577.63 (ff5c0da2ec0ad..., userDataDir: C:\Users\Rafael\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:64594}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:64594/devtoo..., se:cdpVersion: 93.0.4577.82, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (7f44f9359072de515b117634ac9039ac)] -> id: firstname]
+Session ID: 7f44f9359072de515b117634ac9039ac
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:78)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:164)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:139)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:251)
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:107)
+	at StepDefinitions.insuranceFormSteps.to_fill_out_insurant_data(insuranceFormSteps.java:78)
+	at ?.to fill out Insurant data(file:///C:/Users/Rafael/Documents/DevRcarv/JavaTestes/TricentisSampleTest/src/test/resources/features/insuranceForm.feature:6)
+

@@ -1,5 +1,6 @@
 package StepDefinitions;
 
+import Pages.insurantForm;
 import Pages.vehicleForm;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -27,6 +28,7 @@ public class insuranceFormSteps {
     WebDriverWait wait = null;
 
     Pages.vehicleForm vehicleForm;
+    Pages.insurantForm insurantForm;
 
     private vehicleForm getVehicleForm() {
         if (vehicleForm == null) {
@@ -34,6 +36,14 @@ public class insuranceFormSteps {
         }
 
         return vehicleForm;
+    }
+
+    private insurantForm getinsurantForm() {
+        if (insurantForm == null) {
+            insurantForm = PageFactory.initElements(driver, insurantForm.class);
+        }
+
+        return insurantForm;
     }
 
     @Before
@@ -60,40 +70,44 @@ public class insuranceFormSteps {
 
     @When("to fill out Insurant data")
     public void to_fill_out_insurant_data() {
-        wait.until(presenceOfElementLocated(By.id("firstname")));
-        driver.findElement(By.id("firstname")).sendKeys("Primeiro");
-        driver.findElement(By.id("lastname")).sendKeys("Ultimo");
-        driver.findElement(By.id("birthdate")).sendKeys("12/31/1980");
-//TODO
-//            driver.findElements(By.name("Gender");
-//            driver.findElement(By.cssSelector("#gendermale")).click();
-        List<WebElement> lstGender = driver.findElements(By.className("ideal-radiocheck-label"));
-        lstGender.get(1).click();
-//FIM TODO
+        getinsurantForm();
+        insurantForm.fillOutForm();
+        insurantForm.nextStep();
 
-        driver.findElement(By.id("streetaddress")).sendKeys("Av. Last Avenue");
-
-        WebElement countryElement = driver.findElement(By.id("country"));
-        Select countryObject = new Select(countryElement);
-        countryObject.selectByIndex(1);
-
-        driver.findElement(By.id("zipcode")).sendKeys("12345678");
-        driver.findElement(By.id("city")).sendKeys("Cidade QA");
-
-        WebElement occupationElement = driver.findElement(By.id("occupation"));
-        Select occupationObject = new Select(occupationElement);
-        occupationObject.selectByIndex(1);
-
-        List<WebElement> lstElements = driver.findElements(By.className("ideal-radiocheck-label"));
-        lstElements.get(5).click();
-
-        driver.findElement(By.id("website")).sendKeys("www.teste.com");
-
-        //   tem q ser com autoit         driver.findElement(By.id("open")).click();
-        File file = new File("resources/img/Identity_Card.png");
-        String absolutePath = file.getAbsolutePath();
-
-        driver.findElement(By.id("nextenterproductdata")).click();
+//        wait.until(presenceOfElementLocated(By.id("firstname")));
+//        driver.findElement(By.id("firstname")).sendKeys("Primeiro");
+//        driver.findElement(By.id("lastname")).sendKeys("Ultimo");
+//        driver.findElement(By.id("birthdate")).sendKeys("12/31/1980");
+////TODO
+////            driver.findElements(By.name("Gender");
+////            driver.findElement(By.cssSelector("#gendermale")).click();
+//        List<WebElement> lstGender = driver.findElements(By.className("ideal-radiocheck-label"));
+//        lstGender.get(1).click();
+////FIM TODO
+//
+//        driver.findElement(By.id("streetaddress")).sendKeys("Av. Last Avenue");
+//
+//        WebElement countryElement = driver.findElement(By.id("country"));
+//        Select countryObject = new Select(countryElement);
+//        countryObject.selectByIndex(1);
+//
+//        driver.findElement(By.id("zipcode")).sendKeys("12345678");
+//        driver.findElement(By.id("city")).sendKeys("Cidade QA");
+//
+//        WebElement occupationElement = driver.findElement(By.id("occupation"));
+//        Select occupationObject = new Select(occupationElement);
+//        occupationObject.selectByIndex(1);
+//
+//        List<WebElement> lstElements = driver.findElements(By.className("ideal-radiocheck-label"));
+//        lstElements.get(5).click();
+//
+//        driver.findElement(By.id("website")).sendKeys("www.teste.com");
+//
+//        //   tem q ser com autoit         driver.findElement(By.id("open")).click();
+//        File file = new File("resources/img/Identity_Card.png");
+//        String absolutePath = file.getAbsolutePath();
+//
+//        driver.findElement(By.id("nextenterproductdata")).click();
     }
     @When("to fill out Product data")
     public void to_fill_out_product_data() {

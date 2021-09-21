@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="1" failures="0" name="tricentisample.RunCucumberTest" time="23.49" errors="0" skipped="0">
+<testsuite tests="1" failures="0" name="tricentisample.RunCucumberTest" time="14.655" errors="1" skipped="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="java.vm.version" value="16.0.1+9-24"/>
@@ -59,5 +59,88 @@
     <property name="sun.stdout.encoding" value="cp850"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="Vehicle Insurance request form" name="Success send request form." time="23.49"/>
+  <testcase classname="Vehicle Insurance request form" name="Success send request form." time="14.655">
+    <error message="element not interactable
+  (Session info: chrome=93.0.4577.82)
+Build info: version: &apos;4.0.0-rc-1&apos;, revision: &apos;bc5511cbda&apos;
+System info: host: &apos;DESKTOP-QDI7E82&apos;, ip: &apos;192.168.15.7&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;16.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [7f44f9359072de515b117634ac9039ac, sendKeysToElement {id=975e0496-65a8-444c-bc6d-3ef78d4662dc, value=[Ljava.lang.CharSequence;@ff23ae7}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 93.0.4577.82, chrome: {chromedriverVersion: 93.0.4577.63 (ff5c0da2ec0ad..., userDataDir: C:\Users\Rafael\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:64594}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:64594/devtoo..., se:cdpVersion: 93.0.4577.82, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (7f44f9359072de515b117634ac9039ac)] -&gt; id: firstname]
+Session ID: 7f44f9359072de515b117634ac9039ac" type="org.openqa.selenium.ElementNotInteractableException">org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=93.0.4577.82)
+Build info: version: &apos;4.0.0-rc-1&apos;, revision: &apos;bc5511cbda&apos;
+System info: host: &apos;DESKTOP-QDI7E82&apos;, ip: &apos;192.168.15.7&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;16.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [7f44f9359072de515b117634ac9039ac, sendKeysToElement {id=975e0496-65a8-444c-bc6d-3ef78d4662dc, value=[Ljava.lang.CharSequence;@ff23ae7}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 93.0.4577.82, chrome: {chromedriverVersion: 93.0.4577.63 (ff5c0da2ec0ad..., userDataDir: C:\Users\Rafael\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:64594}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:64594/devtoo..., se:cdpVersion: 93.0.4577.82, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (7f44f9359072de515b117634ac9039ac)] -&gt; id: firstname]
+Session ID: 7f44f9359072de515b117634ac9039ac
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:78)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:164)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:139)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:251)
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:107)
+	at StepDefinitions.insuranceFormSteps.to_fill_out_insurant_data(insuranceFormSteps.java:78)
+	at ✽.to fill out Insurant data(file:///C:/Users/Rafael/Documents/DevRcarv/JavaTestes/TricentisSampleTest/src/test/resources/features/insuranceForm.feature:6)
+</error>
+    <system-out>
+Scenario: Success send request form.                &amp;#27;[90m# src/test/resources/features/insuranceForm.feature:3&amp;#27;[0m
+  &amp;#27;[32mGiven &amp;#27;[0m&amp;#27;[32muser is on main Request Insurance form page&amp;#27;[0m &amp;#27;[90m# StepDefinitions.insuranceFormSteps.user_is_on_main_request_insurance_form_page()&amp;#27;[0m
+  &amp;#27;[32mWhen &amp;#27;[0m&amp;#27;[32mto fill out Vehicle data&amp;#27;[0m                     &amp;#27;[90m# StepDefinitions.insuranceFormSteps.to_fill_out_vehicle_data()&amp;#27;[0m
+  &amp;#27;[31m* &amp;#27;[0m&amp;#27;[31mto fill out Insurant data&amp;#27;[0m                       &amp;#27;[90m# StepDefinitions.insuranceFormSteps.to_fill_out_insurant_data()&amp;#27;[0m
+      &amp;#27;[31morg.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=93.0.4577.82)
+Build info: version: &apos;4.0.0-rc-1&apos;, revision: &apos;bc5511cbda&apos;
+System info: host: &apos;DESKTOP-QDI7E82&apos;, ip: &apos;192.168.15.7&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;16.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [7f44f9359072de515b117634ac9039ac, sendKeysToElement {id=975e0496-65a8-444c-bc6d-3ef78d4662dc, value=[Ljava.lang.CharSequence;@ff23ae7}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 93.0.4577.82, chrome: {chromedriverVersion: 93.0.4577.63 (ff5c0da2ec0ad..., userDataDir: C:\Users\Rafael\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:64594}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:64594/devtoo..., se:cdpVersion: 93.0.4577.82, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (7f44f9359072de515b117634ac9039ac)] -&gt; id: firstname]
+Session ID: 7f44f9359072de515b117634ac9039ac
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:78)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:164)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:139)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:547)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:251)
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:107)
+	at StepDefinitions.insuranceFormSteps.to_fill_out_insurant_data(insuranceFormSteps.java:78)
+	at âœ½.to fill out Insurant data(file:///C:/Users/Rafael/Documents/DevRcarv/JavaTestes/TricentisSampleTest/src/test/resources/features/insuranceForm.feature:6)
+&amp;#27;[0m
+  &amp;#27;[36m* &amp;#27;[0m&amp;#27;[36mto fill out Product data&amp;#27;[0m                        &amp;#27;[90m# StepDefinitions.insuranceFormSteps.to_fill_out_product_data()&amp;#27;[0m
+  &amp;#27;[36mAnd &amp;#27;[0m&amp;#27;[36mchoose Price option&amp;#27;[0m                           &amp;#27;[90m# StepDefinitions.insuranceFormSteps.choose_price_option()&amp;#27;[0m
+  &amp;#27;[36mAnd &amp;#27;[0m&amp;#27;[36msend Quote&amp;#27;[0m                                    &amp;#27;[90m# StepDefinitions.insuranceFormSteps.send_quote()&amp;#27;[0m
+  &amp;#27;[36mThen &amp;#27;[0m&amp;#27;[36msee success message.&amp;#27;[0m                         &amp;#27;[90m# StepDefinitions.insuranceFormSteps.see_success_message()&amp;#27;[0m
+</system-out>
+    <system-err>SLF4J: Failed to load class &quot;org.slf4j.impl.StaticLoggerBinder&quot;.
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Starting ChromeDriver 93.0.4577.63 (ff5c0da2ec0adeaed5550e6c7e98417dac77d98a-refs/branch-heads/4577@{#1135}) on port 1611
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+set. 21, 2021 10:11:49 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+set. 21, 2021 10:11:49 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+INFO: Found exact CDP implementation for version 93
+</system-err>
+  </testcase>
 </testsuite>
