@@ -1,7 +1,8 @@
-StepDefinitions\insuranceFormSteps.class
-Pages\insurantForm.class
 Pages\vehicleForm.class
+Pages\priceOptionForm.class
 com\framework\helper\waitHelper.class
 com\framework\helper\commonsHelper.class
+StepDefinitions\insuranceFormSteps.class
+Pages\insurantForm.class
 tricentisample\RunCucumberTest.class
 Pages\productForm.class

@@ -1,6 +1,7 @@
 package StepDefinitions;
 
 import Pages.insurantForm;
+import Pages.priceOptionForm;
 import Pages.productForm;
 import Pages.vehicleForm;
 import io.cucumber.java.After;
@@ -31,6 +32,7 @@ public class insuranceFormSteps {
     Pages.vehicleForm vehicleForm;
     Pages.insurantForm insurantForm;
     Pages.productForm productForm;
+    Pages.priceOptionForm priceOptionForm;
 
     private vehicleForm getVehicleForm() {
         if (vehicleForm == null) {
@@ -54,6 +56,14 @@ public class insuranceFormSteps {
         }
 
         return productForm;
+    }
+
+    private priceOptionForm getpriceOptionForm() {
+        if (priceOptionForm == null) {
+            priceOptionForm = PageFactory.initElements(driver, priceOptionForm.class);
+        }
+
+        return priceOptionForm;
     }
 
     @Before
@@ -93,13 +103,9 @@ public class insuranceFormSteps {
 
     @When("choose Price option")
     public void choose_price_option() {
-        wait.until(presenceOfElementLocated(By.id("nextsendquote")));
-        List<WebElement> lstElements = driver.findElements(By.className("ideal-radio"));
-        lstElements.get(lstElements.size()-1).click();
-        wait.until(presenceOfElementLocated(By.id("downloadquote")));
-        wait.until(elementToBeClickable(By.id("nextsendquote")));
-
-        driver.findElement(By.id("nextsendquote")).click();
+        getpriceOptionForm();
+        priceOptionForm.fillOutForm();
+        priceOptionForm.nextStep();
     }
 
     @When("send Quote")
