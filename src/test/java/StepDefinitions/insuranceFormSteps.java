@@ -1,8 +1,6 @@
 package StepDefinitions;
 
-import Pages.insurantForm;
-import Pages.productForm;
-import Pages.vehicleForm;
+import Pages.*;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
@@ -31,7 +29,9 @@ public class insuranceFormSteps {
     Pages.vehicleForm vehicleForm;
     Pages.insurantForm insurantForm;
     Pages.productForm productForm;
-
+    Pages.priceOptionForm priceOptionForm;
+    Pages.sendQuoteForm sendQuoteForm;
+//TODO PageFactory inside pages and Hooks Steps Separated and datatable scenarios for vehicle type
     private vehicleForm getVehicleForm() {
         if (vehicleForm == null) {
             vehicleForm = PageFactory.initElements(driver, vehicleForm.class);
@@ -54,6 +54,22 @@ public class insuranceFormSteps {
         }
 
         return productForm;
+    }
+
+    private priceOptionForm getpriceOptionForm() {
+        if (priceOptionForm == null) {
+            priceOptionForm = PageFactory.initElements(driver, priceOptionForm.class);
+        }
+
+        return priceOptionForm;
+    }
+
+    private sendQuoteForm getsendQuoteForm() {
+        if (sendQuoteForm == null) {
+            sendQuoteForm = PageFactory.initElements(driver, sendQuoteForm.class);
+        }
+
+        return sendQuoteForm;
     }
 
     @Before
@@ -93,29 +109,21 @@ public class insuranceFormSteps {
 
     @When("choose Price option")
     public void choose_price_option() {
-        wait.until(presenceOfElementLocated(By.id("nextsendquote")));
-        List<WebElement> lstElements = driver.findElements(By.className("ideal-radio"));
-        lstElements.get(lstElements.size()-1).click();
-        wait.until(presenceOfElementLocated(By.id("downloadquote")));
-        wait.until(elementToBeClickable(By.id("nextsendquote")));
-
-        driver.findElement(By.id("nextsendquote")).click();
+        getpriceOptionForm();
+        priceOptionForm.fillOutForm();
+        priceOptionForm.nextStep();
     }
 
     @When("send Quote")
     public void send_quote() {
-        driver.findElement(By.id("email")).sendKeys("novo@teste.com");
-        driver.findElement(By.id("phone")).sendKeys("12345678");
-        driver.findElement(By.id("username")).sendKeys("test1");
-        driver.findElement(By.id("password")).sendKeys("123Teste");
-        driver.findElement(By.id("confirmpassword")).sendKeys("123Teste");
-        driver.findElement(By.id("Comments")).sendKeys("Comentario");
-
-        driver.findElement(By.id("sendemail")).click();
+        getsendQuoteForm();
+        sendQuoteForm.fillOutForm();
+        sendQuoteForm.sendEmail();
     }
     @Then("see success message.")
     public void see_success_message() {
         wait.until(presenceOfElementLocated(By.className("sweet-alert")));
+//        todo pageobjects
         assertEquals("Sending e-mail success!", driver.findElement(By.cssSelector(".sweet-alert h2")).getText());
         driver.findElement(By.className("confirm")).click();
     }
