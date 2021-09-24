@@ -30,6 +30,9 @@ public class insurantForm {
     @FindBy(id="birthdate")
     public WebElement birthDate;
 
+    @FindBy(className="ideal-radiocheck-label")
+    public List<WebElement> lstGeneric;
+
     @FindBy(id="streetaddress")
     public WebElement streetAddress;
 
@@ -57,21 +60,13 @@ public class insurantForm {
         firstName.sendKeys("Primeiro");
         lastName.sendKeys("Ultimo");
         birthDate.sendKeys("12/31/1980");
-//TODO
-//            driver.findElements(By.name("Gender");
-//            driver.findElement(By.cssSelector("#gendermale")).click();
-        List<WebElement> lstGender = driver.findElements(By.className("ideal-radiocheck-label"));
-        lstGender.get(1).click();
-//FIM TODO
+        lstGeneric.get(1).click();
         streetAddress.sendKeys("Av. Last Avenue");
         helper.chooseByIndex(country, 1);
         zipCode.sendKeys("12345678");
         city.sendKeys("Cidade QA");
         helper.chooseByIndex(occupation, 1);
-
-        List<WebElement> lstElements = driver.findElements(By.className("ideal-radiocheck-label"));
-        lstElements.get(5).click();
-
+        lstGeneric.get(5).click();
         website.sendKeys("www.teste.com");
 //TODO   tem q ser com autoit         driver.findElement(By.id("open")).click();
 //        File file = new File("resources/img/Identity_Card.png");

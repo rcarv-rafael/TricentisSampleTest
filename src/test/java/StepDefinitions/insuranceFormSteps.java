@@ -1,9 +1,6 @@
 package StepDefinitions;
 
-import Pages.insurantForm;
-import Pages.priceOptionForm;
-import Pages.productForm;
-import Pages.vehicleForm;
+import Pages.*;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
@@ -33,6 +30,7 @@ public class insuranceFormSteps {
     Pages.insurantForm insurantForm;
     Pages.productForm productForm;
     Pages.priceOptionForm priceOptionForm;
+    Pages.sendQuoteForm sendQuoteForm;
 
     private vehicleForm getVehicleForm() {
         if (vehicleForm == null) {
@@ -64,6 +62,14 @@ public class insuranceFormSteps {
         }
 
         return priceOptionForm;
+    }
+
+    private sendQuoteForm getsendQuoteForm() {
+        if (sendQuoteForm == null) {
+            sendQuoteForm = PageFactory.initElements(driver, sendQuoteForm.class);
+        }
+
+        return sendQuoteForm;
     }
 
     @Before
@@ -110,18 +116,14 @@ public class insuranceFormSteps {
 
     @When("send Quote")
     public void send_quote() {
-        driver.findElement(By.id("email")).sendKeys("novo@teste.com");
-        driver.findElement(By.id("phone")).sendKeys("12345678");
-        driver.findElement(By.id("username")).sendKeys("test1");
-        driver.findElement(By.id("password")).sendKeys("123Teste");
-        driver.findElement(By.id("confirmpassword")).sendKeys("123Teste");
-        driver.findElement(By.id("Comments")).sendKeys("Comentario");
-
-        driver.findElement(By.id("sendemail")).click();
+        getsendQuoteForm();
+        sendQuoteForm.fillOutForm();
+        sendQuoteForm.sendEmail();
     }
     @Then("see success message.")
     public void see_success_message() {
         wait.until(presenceOfElementLocated(By.className("sweet-alert")));
+//        todo pageobjects
         assertEquals("Sending e-mail success!", driver.findElement(By.cssSelector(".sweet-alert h2")).getText());
         driver.findElement(By.className("confirm")).click();
     }

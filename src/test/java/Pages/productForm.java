@@ -32,6 +32,9 @@ public class productForm {
     @FindBy(id="damageinsurance")
     public WebElement damageInsurance;
 
+    @FindBy(className="ideal-check")
+    public List<WebElement> optionalProducts;
+
     @FindBy(id="courtesycar")
     public WebElement courtesyCar;
 
@@ -45,12 +48,7 @@ public class productForm {
         helper.chooseByIndex(insuranceSum, 1);
         helper.chooseByIndex(meritRating, 1);
         helper.chooseByIndex(damageInsurance, 1);
-//TODO
-//        driver.findElement(By.cssSelector("#EuroProtection")).click();
-//        driver.findElement(By.id("LegalDefenseInsurance")).click();
-        List<WebElement> lstElements = driver.findElements(By.className("ideal-check"));
-        lstElements.get(lstElements.size()-1).click();
-//fim todo
+        optionalProducts.get(optionalProducts.size()-1).click();
         helper.chooseByIndex(courtesyCar, 1);
     }
 
