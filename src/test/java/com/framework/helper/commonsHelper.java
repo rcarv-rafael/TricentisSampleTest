@@ -16,4 +16,5 @@ public class commonsHelper {
         Select selectObject = new Select(element);
         selectObject.selectByIndex(elementIndex);
     }
+//    TODO method for check before interact(sendkeys and click)
 }
