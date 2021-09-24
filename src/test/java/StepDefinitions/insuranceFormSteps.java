@@ -31,7 +31,7 @@ public class insuranceFormSteps {
     Pages.productForm productForm;
     Pages.priceOptionForm priceOptionForm;
     Pages.sendQuoteForm sendQuoteForm;
-//TODO PageFactory inside pages and Hooks Steps Separated
+//TODO PageFactory inside pages and Hooks Steps Separated and datatable scenarios for vehicle type
     private vehicleForm getVehicleForm() {
         if (vehicleForm == null) {
             vehicleForm = PageFactory.initElements(driver, vehicleForm.class);
